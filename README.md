@@ -8,6 +8,16 @@ Node_A1:
     From geometry_msgs.msg Import PoseStamped
 
     Set on_startup To 1
+    
+    Define Function startup(on_startup)
+	
+	    System Clear
+	    Print "--------------------Node A1--------------------"
+	    Print "Node A1 acts as the user interface allowing the"
+	    Print "user to input a desired X, Y goal position. "
+	    Print "The user can also cancel active goals."
+	    Print "Press enter to continue..."
+	    User Input enter
 
     Define Function reaching_goal()
 
@@ -82,16 +92,6 @@ Node_A1:
 	    Else
 		    Call wron()
 
-    Define Function startup(on_startup)
-	
-	    System Clear
-	    Print "--------------------Node A1--------------------"
-	    Print "Node A1 acts as the user interface allowing the"
-	    Print "user to input a desired X, Y goal position. "
-	    Print "The user can also cancel active goals."
-	    Print "Press enter to continue..."
-	    User Input enter
-
     If __name__ Is Equal to '__main__'
 	
 	    If on_startup is Equal to 1
@@ -113,6 +113,15 @@ Node_A2:
     From assignment_2_2022.msg Import Vel
 
     Set on_startup Equal To 1
+ 
+    Define Function startup(on_startup)
+	
+	    System Clear
+	    Print "--------------------Node A2--------------------"
+	    Print "Node A2 prints the current position of the"
+	    Print "in the form (x, y, vel_x, vel_y)."
+	    Print "Press enter to continue..."
+	    User Input enter
 
     Define Function callback(a)
 	
@@ -127,14 +136,6 @@ Node_A2:
 	    Print Variable message
 	    Publish Variable message
 
-    Define Function startup(on_startup)
-	
-	    System Clear
-	    Print "--------------------Node A2--------------------"
-	    Print "Node A2 prints the current position of the"
-	    Print "in the form (x, y, vel_x, vel_y)."
-	    Print "Press enter to continue..."
-	    User Input enter
 
     If __name__ is Equal to '__main__'
 	
