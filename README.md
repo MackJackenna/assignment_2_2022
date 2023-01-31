@@ -1,4 +1,10 @@
-# Pseudocode:
+# About Repository:
+This repoistory outlines four distinct nodes that provide information to the user about a laser-vision robot that can be moved within an arena. Node_A1 allows the user to input a desired (x,y) goal for the robot, as well as the ability to cancel any active goals. Node_A2 provides the user with the robots current position and velocity within the arena. Node_B displays to the user how many goals have been successfully reached or cancelled since startup. Node_C gives the user the position of the robot away from the set goal, as well as it's average velocity.
+
+# How to Launch:
+To launch, gnome-terminal must be installed on the docker image, this can be done buy running *sudo apt-get update* and then *sudo apt-get install gnome-terminal*. You can then run the whole package using the command *roslaunch assignment_2_2022 all_nodes.launch*. This will open four individual terminals with each of the nodes active.
+
+# Pseudocode for Node_A1 and Node_A2:
 Node_A1:
 
     Import rospy
@@ -147,6 +153,10 @@ Node_A2:
 	    Call Subscriber
 
 	    Call rospy.spin()
+	    
+# Things to improve:
+Node_C does not use a parameter to change the message rate of display but instead asks for a user integer input. Given a revisit of the package, this would be ammended to include the parameter.
+Modifying the launch file to include the geometry of the four terminals relative to the screen would help to make the running of the package more fluid, with less work to do for the user.
 
 	
 	
