@@ -157,6 +157,7 @@ Node_A2:
 # Things to improve:
 Node_C does not use a parameter to change the message rate of display but instead asks for a user integer input. Given a revisit of the package, this would be ammended to include the parameter.
 Modifying the launch file to include the geometry of the four terminals relative to the screen would help to make the running of the package more fluid, with less work to do for the user.
+The actual position of the robot seems to be out by 0.5 in the x coordinate, I am unsure whether this is down to my coding or to the simulation environment.
 
 	
 	
