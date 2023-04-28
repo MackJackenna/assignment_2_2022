@@ -1,3 +1,11 @@
+## @package assignment_2_2022
+#
+#\file node_B.py
+#\brief This node displays goals reached
+#
+#
+
+
 #! /usr/bin/env python3
 
 import rospy

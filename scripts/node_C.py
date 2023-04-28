@@ -1,3 +1,11 @@
+## @package assignment_2_2022
+#
+#\file node_C.py
+#\brief This node compares positions
+#
+#
+
+
 #! /usr/bin/env python3
 
 import rospy

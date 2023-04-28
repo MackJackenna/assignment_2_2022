@@ -1,3 +1,12 @@
+## @package assignment_2_2022
+#
+#\file node_A2.py
+#\brief This node prints the current position of the robot
+#
+#
+
+
+
 #! /usr/bin/env python3
 
 import rospy

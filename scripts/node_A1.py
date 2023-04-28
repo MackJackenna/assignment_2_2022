@@ -1,3 +1,12 @@
+## @package assignment_2_2022
+#
+#\file node_A1.py
+#\brief Allows used to input x and y coords
+#
+#
+
+
+
 #! /usr/bin/env python3
 
 import rospy
