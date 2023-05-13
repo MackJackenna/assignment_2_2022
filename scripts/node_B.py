@@ -1,8 +1,22 @@
 ## @package assignment_2_2022
 #
 #\file node_B.py
-#\brief This node displays goals reached
+#\brief This node acts as a running tally for goals.
+#\author Jack McKenna
+#\version 1.0
+#\date 01/02/2023
 #
+#\details 
+#
+# Subscribes to: <BR>
+#	/reaching_goal/result
+#
+# Server: <BR>
+#	tally
+#
+# Description:
+#
+# This node takes a running tally of how many goals have been successfully reached or successfully cancelled. It will display as and when one of these conditions are updated.
 #
 
 
@@ -15,12 +29,30 @@ from std_srvs.srv import Empty, EmptyResponse
 
 # node_B.py will display to the user how many goals have been reached sucessfully and how many have been cancelled
 
+##
+#
+#\brief This variable acts as a counter for the startup function
+#
 on_startup = 1
+
+##
+#
+#\brief This variable acts as a tally for goals reached
+#
 goal_tally = 0
+
+##
+#
+#\brief This variable acts as a tally for goals cancelled
 cancel_tally = 0
 # Stores the number of goals reached and goals cancelled
 
-
+##
+#\brief Provides a basic node description for ease of use.
+#\param on_startup
+#\return text display
+#
+# This function runs on startup of the node and provides a description of it's use to the user.
 def startup(on_startup):
 	
 	os.system('clear')
@@ -31,6 +63,12 @@ def startup(on_startup):
 	print("\nPress enter to continue...")
 	input("\n------------------------------------------------")
 
+##
+#\brief This functions updates the tallys.
+#\param a
+#\return service()
+#
+# This function subscribes to /reaching_goal/status. A status indicator of 2 translates into a cancelled goal, an indicator of 3 is a reached goal.
 def subscriber(a):
 
 	if a.status.status == 2:
@@ -46,7 +84,13 @@ def subscriber(a):
 		goal_tally += 1
 		os.system('rosservice call tally')
 		# Will call the tally when a goal is reached
-		
+
+##
+#\brief A service which displays the tallys
+#\param b
+#\return a displaay of the current tally
+#
+# This function is initiated by the publisher and prints to the user the amount of times the goal and cancel tally has been updated.		
 def service(b):
 
 	global goal_tally, cancel_tally

@@ -2,26 +2,81 @@
 \label{node___a2_8py}\index{scripts/node\_A2.py@{scripts/node\_A2.py}}
 
 
-This node prints the current position of the robot.  
+This node prints the current position of the robot to the user.  
 
 
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{node___a2_8py_a37beb534a601ef6539b339030229736e}\label{node___a2_8py_a37beb534a601ef6539b339030229736e}} 
-def {\bfseries node\+\_\+\+A2.\+startup} (on\+\_\+startup)
-\item 
-\mbox{\Hypertarget{node___a2_8py_a0eab6386059f74f0aae384eaf02de7d1}\label{node___a2_8py_a0eab6386059f74f0aae384eaf02de7d1}} 
-def {\bfseries node\+\_\+\+A2.\+callback} (a)
-\end{DoxyCompactItemize}
+def \mbox{\hyperlink{node___a2_8py_a37beb534a601ef6539b339030229736e}{node\+\_\+\+A2.\+startup}} (on\+\_\+startup)
+\begin{DoxyCompactList}\small\item\em Provides a basic node description for ease of use. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{node___a2_8py_a0eab6386059f74f0aae384eaf02de7d1}{node\+\_\+\+A2.\+callback}} (a)
+\begin{DoxyCompactList}\small\item\em Publishes data from \textbackslash{}odom to the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{node___a2_8py_a12d5ad0a593a7b6ecde1524fd4721ae9}\label{node___a2_8py_a12d5ad0a593a7b6ecde1524fd4721ae9}} 
-int {\bfseries node\+\_\+\+A2.\+on\+\_\+startup} = 1
-\end{DoxyCompactItemize}
+int \mbox{\hyperlink{node___a2_8py_a12d5ad0a593a7b6ecde1524fd4721ae9}{node\+\_\+\+A2.\+on\+\_\+startup}} = 1
+\begin{DoxyCompactList}\small\item\em This variable acts as a counter for the startup function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-This node prints the current position of the robot. 
+This node prints the current position of the robot to the user. 
 
+\begin{DoxyAuthor}{Author}
+Jack Mc\+Kenna 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+01/02/2023
+\end{DoxyDate}
+Subscribes to\+: ~\newline
+ /odom
+
+Publishes to\+: ~\newline
+ position\+\_\+and\+\_\+velocity
+
+Description\+:
+
+This node prints to the user the current position of the robot as a set of coordinates (x,y,vel\+\_\+x,vel\+\_\+y). 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{node___a2_8py_a0eab6386059f74f0aae384eaf02de7d1}\label{node___a2_8py_a0eab6386059f74f0aae384eaf02de7d1}} 
+\index{node\_A2.py@{node\_A2.py}!callback@{callback}}
+\index{callback@{callback}!node\_A2.py@{node\_A2.py}}
+\doxysubsubsection{\texorpdfstring{callback()}{callback()}}
+{\footnotesize\ttfamily def node\+\_\+\+A2.\+callback (\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})}
+
+
+
+Publishes data from \textbackslash{}odom to the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+intermediate text message.
+\end{DoxyReturn}
+This function employs a publisher that subscribes to the /odom (odometry) topic to extract the robots position. \mbox{\Hypertarget{node___a2_8py_a37beb534a601ef6539b339030229736e}\label{node___a2_8py_a37beb534a601ef6539b339030229736e}} 
+\index{node\_A2.py@{node\_A2.py}!startup@{startup}}
+\index{startup@{startup}!node\_A2.py@{node\_A2.py}}
+\doxysubsubsection{\texorpdfstring{startup()}{startup()}}
+{\footnotesize\ttfamily def node\+\_\+\+A2.\+startup (\begin{DoxyParamCaption}\item[{}]{on\+\_\+startup }\end{DoxyParamCaption})}
+
+
+
+Provides a basic node description for ease of use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em on\+\_\+startup} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+text display
+\end{DoxyReturn}
+This function runs on startup of the node and provides a description of it\textquotesingle{}s use to the user. 

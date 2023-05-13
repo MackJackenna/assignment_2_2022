@@ -2,41 +2,93 @@
 \label{node___c_8py}\index{scripts/node\_C.py@{scripts/node\_C.py}}
 
 
-This node compares positions.  
+This node displays the robot\textquotesingle{}s current position away from the set goal.  
 
 
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{node___c_8py_a96f10a08863f9d21e724242ffacefd0e}\label{node___c_8py_a96f10a08863f9d21e724242ffacefd0e}} 
-def {\bfseries node\+\_\+\+C.\+startup} (on\+\_\+startup)
-\item 
-\mbox{\Hypertarget{node___c_8py_a1ef6df83e076053682804556f6bb2d0f}\label{node___c_8py_a1ef6df83e076053682804556f6bb2d0f}} 
-def {\bfseries node\+\_\+\+C.\+subscriber} (a)
-\end{DoxyCompactItemize}
+def \mbox{\hyperlink{node___c_8py_a96f10a08863f9d21e724242ffacefd0e}{node\+\_\+\+C.\+startup}} (on\+\_\+startup)
+\begin{DoxyCompactList}\small\item\em Provides a basic node description for ease of use. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{node___c_8py_a1ef6df83e076053682804556f6bb2d0f}{node\+\_\+\+C.\+subscriber}} (a)
+\begin{DoxyCompactList}\small\item\em This function identifies the robots position and goal position. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{node___c_8py_a122dff12519599cfda9c5bd7804ff535}\label{node___c_8py_a122dff12519599cfda9c5bd7804ff535}} 
-int {\bfseries node\+\_\+\+C.\+on\+\_\+startup} = 1
-\item 
+int \mbox{\hyperlink{node___c_8py_a122dff12519599cfda9c5bd7804ff535}{node\+\_\+\+C.\+on\+\_\+startup}} = 1
+\begin{DoxyCompactList}\small\item\em This variable acts as a counter for the startup function. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{node___c_8py_aacba8b357225662b87a9caf2016b9984}\label{node___c_8py_aacba8b357225662b87a9caf2016b9984}} 
-int {\bfseries node\+\_\+\+C.\+token} = 0
-\item 
+int \mbox{\hyperlink{node___c_8py_aacba8b357225662b87a9caf2016b9984}{node\+\_\+\+C.\+token}} = 0
+\begin{DoxyCompactList}\small\item\em Acts as a counter to change conditions. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{node___c_8py_add1d03d44566f220634fb94338ee96de}\label{node___c_8py_add1d03d44566f220634fb94338ee96de}} 
-int {\bfseries node\+\_\+\+C.\+temp} = 0
-\item 
+int \mbox{\hyperlink{node___c_8py_add1d03d44566f220634fb94338ee96de}{node\+\_\+\+C.\+temp}} = 0
+\begin{DoxyCompactList}\small\item\em An intermediate variable. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{node___c_8py_a5e8131cded75bd07f4de416a995d0dc3}\label{node___c_8py_a5e8131cded75bd07f4de416a995d0dc3}} 
-int {\bfseries node\+\_\+\+C.\+avg\+\_\+vel} = 0
-\item 
+int \mbox{\hyperlink{node___c_8py_a5e8131cded75bd07f4de416a995d0dc3}{node\+\_\+\+C.\+avg\+\_\+vel}} = 0
+\begin{DoxyCompactList}\small\item\em A variable to store the avergae velocity. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{node___c_8py_a4f404f5a9c1e22689777b0a3e7e7124a}\label{node___c_8py_a4f404f5a9c1e22689777b0a3e7e7124a}} 
-int {\bfseries node\+\_\+\+C.\+set\+\_\+goal} = 0
-\item 
+int \mbox{\hyperlink{node___c_8py_a4f404f5a9c1e22689777b0a3e7e7124a}{node\+\_\+\+C.\+set\+\_\+goal}} = 0
+\begin{DoxyCompactList}\small\item\em A varaible to store the user set goal. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{node___c_8py_adb49b80f1a9515fef907bcd3577e9111}\label{node___c_8py_adb49b80f1a9515fef907bcd3577e9111}} 
-{\bfseries node\+\_\+\+C.\+message\+\_\+rate} = input(\char`\"{}Please enter the rate at which you would like the messages to publish\+: \char`\"{})
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{node___c_8py_adb49b80f1a9515fef907bcd3577e9111}{node\+\_\+\+C.\+message\+\_\+rate}} = input(\char`\"{}Please enter the rate at which you would like the messages to publish\+: \char`\"{})
+\begin{DoxyCompactList}\small\item\em This variable takes a user input as the rate in which the messages will publish to the terminal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-This node compares positions. 
+This node displays the robot\textquotesingle{}s current position away from the set goal. 
 
+\begin{DoxyAuthor}{Author}
+Jack Mc\+Kenna 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+01/02/2023
+\end{DoxyDate}
+Subscribes to\+: ~\newline
+ position\+\_\+and\+\_\+velocity /des\+\_\+pos\+\_\+x /des\+\_\+pos\+\_\+y
+
+Description\+:
+
+This node compares the robot\textquotesingle{}s current position with the goal set by the user and returns the distance between. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{node___c_8py_a96f10a08863f9d21e724242ffacefd0e}\label{node___c_8py_a96f10a08863f9d21e724242ffacefd0e}} 
+\index{node\_C.py@{node\_C.py}!startup@{startup}}
+\index{startup@{startup}!node\_C.py@{node\_C.py}}
+\doxysubsubsection{\texorpdfstring{startup()}{startup()}}
+{\footnotesize\ttfamily def node\+\_\+\+C.\+startup (\begin{DoxyParamCaption}\item[{}]{on\+\_\+startup }\end{DoxyParamCaption})}
+
+
+
+Provides a basic node description for ease of use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em on\+\_\+startup} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+text display
+\end{DoxyReturn}
+This function runs on startup of the node and provides a description of it\textquotesingle{}s use to the user. \mbox{\Hypertarget{node___c_8py_a1ef6df83e076053682804556f6bb2d0f}\label{node___c_8py_a1ef6df83e076053682804556f6bb2d0f}} 
+\index{node\_C.py@{node\_C.py}!subscriber@{subscriber}}
+\index{subscriber@{subscriber}!node\_C.py@{node\_C.py}}
+\doxysubsubsection{\texorpdfstring{subscriber()}{subscriber()}}
+{\footnotesize\ttfamily def node\+\_\+\+C.\+subscriber (\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})}
+
+
+
+This function identifies the robots position and goal position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The average velocity
+\end{DoxyReturn}
+This function stores the robots current position and set goal position then computes, using pythagorean theorem, the straight line distance of the robot away from the goal. 

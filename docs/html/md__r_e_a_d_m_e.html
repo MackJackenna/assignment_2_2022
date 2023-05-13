@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Assignment 2: Pseudocode:</title>
+<title>My Project: About Repository:</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Assignment 2
-   &#160;<span id="projectnumber">1.0</span>
+   <div id="projectname">My Project
    </div>
-   <div id="projectbrief">test to push to git repository</div>
   </td>
  </tr>
  </tbody>
@@ -64,16 +62,32 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Pseudocode: </div>  </div>
+<div class="title">About Repository: </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Node_A1: </p><pre class="fragment">Import rospy
+<div class="textblock"><p>This repoistory outlines four distinct nodes that provide information to the user about a laser-vision robot that can be moved within an arena. Node_A1 allows the user to input a desired (x,y) goal for the robot, as well as the ability to cancel any active goals. Node_A2 provides the user with the robots current position and velocity within the arena. Node_B displays to the user how many goals have been successfully reached or cancelled since startup. Node_C gives the user the position of the robot away from the set goal, as well as it's average velocity.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+How to Launch:</h1>
+<p>To launch, gnome-terminal must be installed on the docker image, this can be done by running <em>sudo apt-get update</em> and then <em>sudo apt-get install gnome-terminal</em>. You can then run the whole package using the command <b>roslaunch assignment_2_2022 all_nodes.launch</b>. This will open four individual terminals with each of the nodes active.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Pseudocode for Node_A1 and Node_A2:</h1>
+<p>Node_A1: </p><pre class="fragment">Import rospy
 Import os
 Import actionlib.msg
 Import assignment_2_2022.msg
 From geometry_msgs.msg Import PoseStamped
 
 Set on_startup To 1
+
+Define Function startup(on_startup)
+
+    System Clear
+    Print "--------------------Node A1--------------------"
+    Print "Node A1 acts as the user interface allowing the"
+    Print "user to input a desired X, Y goal position. "
+    Print "The user can also cancel active goals."
+    Print "Press enter to continue..."
+    User Input enter
 
 Define Function reaching_goal()
 
@@ -148,16 +162,6 @@ Define Function interface()
     Else
         Call wron()
 
-Define Function startup(on_startup)
-
-    System Clear
-    Print "--------------------Node A1--------------------"
-    Print "Node A1 acts as the user interface allowing the"
-    Print "user to input a desired X, Y goal position. "
-    Print "The user can also cancel active goals."
-    Print "Press enter to continue..."
-    User Input enter
-
 If __name__ Is Equal to '__main__'
 
     If on_startup is Equal to 1
@@ -177,6 +181,15 @@ From assignment_2_2022.msg Import Vel
 
 Set on_startup Equal To 1
 
+Define Function startup(on_startup)
+
+    System Clear
+    Print "--------------------Node A2--------------------"
+    Print "Node A2 prints the current position of the"
+    Print "in the form (x, y, vel_x, vel_y)."
+    Print "Press enter to continue..."
+    User Input enter
+
 Define Function callback(a)
 
     Set pub Equal to rospy.Publisher('position_and_velocity', Vel, queue_size=1)
@@ -190,14 +203,6 @@ Define Function callback(a)
     Print Variable message
     Publish Variable message
 
-Define Function startup(on_startup)
-
-    System Clear
-    Print "--------------------Node A2--------------------"
-    Print "Node A2 prints the current position of the"
-    Print "in the form (x, y, vel_x, vel_y)."
-    Print "Press enter to continue..."
-    User Input enter
 
 If __name__ is Equal to '__main__'
 
@@ -209,7 +214,10 @@ If __name__ is Equal to '__main__'
     Call Subscriber
 
     Call rospy.spin()
-</pre> </div></div><!-- contents -->
+</pre><h1><a class="anchor" id="autotoc_md3"></a>
+Things to improve:</h1>
+<p>Node_C does not use a parameter to change the message rate of display but instead asks for a user integer input. Given a revisit of the package, this would be ammended to include the parameter. Modifying the launch file to include the geometry of the four terminals relative to the screen would help to make the running of the package more fluid, with less work to do for the user. The actual position of the robot seems to be out by 0.5 in the x coordinate, I am unsure whether this is down to my coding or to the simulation environment. </p>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

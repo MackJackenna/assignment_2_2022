@@ -1,11 +1,23 @@
 ## @package assignment_2_2022
 #
 #\file node_A1.py
-#\brief Allows used to input x and y coords
+#\brief The node handles the user input of the robot.
+#\author Jack McKenna
+#\version 1.0
+#\date 01/02/2023
+#
+#\details 
+#
+# Clients: <BR>
+#	/reaching_goal
 #
 #
-
-
+# Description: 
+#
+# This node concerns itself with defining the user input of the robot. The use can select the desired x and y position as a goal for the robot to travel to. The user also has the option to cancel currently active goals. TESTESTESTESTEST
+#
+#
+#
 
 #! /usr/bin/env python3
 
@@ -18,11 +30,20 @@ from geometry_msgs.msg import PoseStamped
 
 # node_A1.py will outline the interface and the functions required to set and cancel the robot's goal
 
+##
+#
+#\brief This variable acts as a counter for the startup function
+#
 on_startup = 1
 # will allow for a brief description of the node before it is used
 
+##
+#\brief Provides a basic node description for ease of use.
+#\param on_startup
+#\return text display
+#
+# This function runs on startup of the node and provides a description of it's use to the user.
 def startup(on_startup):
-# Provides a basic node description for ease of use
 	os.system('clear')
 	print("--------------------Node A1--------------------\n")
 	print("Node A1 acts as the user interface allowing the ")
@@ -31,8 +52,12 @@ def startup(on_startup):
 	print("\nPress enter to continue...")
 	input("\n-----------------------------------------------")
 
+##
+#\brief Acts as a UI for the user to input the desired coordinates.
+#\return text confirmation.
+#
+# This function takes an intger input from the user for both x and y coordinates then communicates with the server to update the robots goal.
 def reaching_goal():
-# Takes the user integer input (x,y) for the desired goal position of the robot
 	
 	os.system('clear')
 	
@@ -64,6 +89,12 @@ def reaching_goal():
 	interface()
 	#Sends the goal then switches to the interface function
 
+##
+#
+#\brief Cancels the currently active goal.
+#\return text confirmation.
+#
+# This function communicates with the server that the current goal has been cancelled by the user.
 def cancel_goal():
 # Cancels any active goals then goes back to interface()
 	
@@ -75,7 +106,13 @@ def cancel_goal():
 	print("\nPress enter to continue...")
 	input("--------------------------------------------------")
 	interface()
-	
+
+##
+#
+#\brief Takes into account incorrect user inputs.
+#\return text confirmation.
+#
+# This function identifies incorrect inputs and communicates this to the server.
 def wrong():
 # Takes into account incorrect inputs
 	
@@ -86,7 +123,12 @@ def wrong():
 	print("\nPress enter to continue...")
 	input("--------------------------------------------------")
 	interface()
-	
+##
+#
+#\brief Acts as a UI to select other functions.
+#\return one of three functions specified by the user.
+#
+# This function is an interface that asks the user to select one of three options to either Select a goal, Cancel a goal or Exit the node. Upon a wrong input, the wrong function is used.	
 def interface():
 # Provides the main interface for accessing goal definitions and cancellations
 
@@ -127,6 +169,11 @@ if __name__ == '__main__':
 	os.system('clear')
 	rospy.init_node('node_A1')
 	#initialised the node
+	
+	##
+	#
+	#\brief This variable accesses the client.
+	#
 	client = actionlib.SimpleActionClient('/reaching_goal',assignment_2_2022.msg.PlanningAction)
 	#acesses the /reaching_goal ros topic
 	interface()

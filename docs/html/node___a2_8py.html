@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Assignment 2: scripts/node_A2.py File Reference</title>
+<title>My Project: scripts/node_A2.py File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Assignment 2
-   &#160;<span id="projectnumber">1.0</span>
+   <div id="projectname">My Project
    </div>
-   <div id="projectbrief">test to push to git repository</div>
   </td>
  </tr>
  </tbody>
@@ -75,27 +73,94 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>This node prints the current position of the robot.  
+<p>This node prints the current position of the robot to the user.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a37beb534a601ef6539b339030229736e"><td class="memItemLeft" align="right" valign="top"><a id="a37beb534a601ef6539b339030229736e"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>node_A2.startup</b> (on_startup)</td></tr>
+<tr class="memitem:a37beb534a601ef6539b339030229736e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="node___a2_8py.html#a37beb534a601ef6539b339030229736e">node_A2.startup</a> (on_startup)</td></tr>
+<tr class="memdesc:a37beb534a601ef6539b339030229736e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a basic node description for ease of use.  <a href="node___a2_8py.html#a37beb534a601ef6539b339030229736e">More...</a><br /></td></tr>
 <tr class="separator:a37beb534a601ef6539b339030229736e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0eab6386059f74f0aae384eaf02de7d1"><td class="memItemLeft" align="right" valign="top"><a id="a0eab6386059f74f0aae384eaf02de7d1"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>node_A2.callback</b> (a)</td></tr>
+<tr class="memitem:a0eab6386059f74f0aae384eaf02de7d1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="node___a2_8py.html#a0eab6386059f74f0aae384eaf02de7d1">node_A2.callback</a> (a)</td></tr>
+<tr class="memdesc:a0eab6386059f74f0aae384eaf02de7d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Publishes data from \odom to the user.  <a href="node___a2_8py.html#a0eab6386059f74f0aae384eaf02de7d1">More...</a><br /></td></tr>
 <tr class="separator:a0eab6386059f74f0aae384eaf02de7d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a12d5ad0a593a7b6ecde1524fd4721ae9"><td class="memItemLeft" align="right" valign="top"><a id="a12d5ad0a593a7b6ecde1524fd4721ae9"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>node_A2.on_startup</b> = 1</td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="node___a2_8py.html#a12d5ad0a593a7b6ecde1524fd4721ae9">node_A2.on_startup</a> = 1</td></tr>
+<tr class="memdesc:a12d5ad0a593a7b6ecde1524fd4721ae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This variable acts as a counter for the startup function. <br /></td></tr>
 <tr class="separator:a12d5ad0a593a7b6ecde1524fd4721ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This node prints the current position of the robot. </p>
-</div></div><!-- contents -->
+<div class="textblock"><p>This node prints the current position of the robot to the user. </p>
+<dl class="section author"><dt>Author</dt><dd>Jack McKenna </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>01/02/2023</dd></dl>
+<p>Subscribes to: <br  />
+ /odom</p>
+<p>Publishes to: <br  />
+ position_and_velocity</p>
+<p>Description:</p>
+<p>This node prints to the user the current position of the robot as a set of coordinates (x,y,vel_x,vel_y). </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a0eab6386059f74f0aae384eaf02de7d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eab6386059f74f0aae384eaf02de7d1">&#9670;&nbsp;</a></span>callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def node_A2.callback </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Publishes data from \odom to the user. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>intermediate text message.</dd></dl>
+<p>This function employs a publisher that subscribes to the /odom (odometry) topic to extract the robots position. </p>
+
+</div>
+</div>
+<a id="a37beb534a601ef6539b339030229736e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37beb534a601ef6539b339030229736e">&#9670;&nbsp;</a></span>startup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def node_A2.startup </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>on_startup</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Provides a basic node description for ease of use. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">on_startup</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>text display</dd></dl>
+<p>This function runs on startup of the node and provides a description of it's use to the user. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -1,8 +1,21 @@
 ## @package assignment_2_2022
 #
 #\file node_C.py
-#\brief This node compares positions
+#\brief This node displays the robot's current position away from the set goal.
+#\author Jack McKenna
+#\version 1.0
+#\date 01/02/2023
 #
+#\details 
+#
+# Subscribes to: <BR>
+#	position_and_velocity
+#	/des_pos_x
+#	/des_pos_y
+#
+# Description:
+#
+# This node compares the robot's current position with the goal set by the user and returns the distance between.
 #
 
 
@@ -15,13 +28,39 @@ from assignment_2_2022.msg import Vel
 
 # node_C.py displays to the user the robots position relative to the desired set goal
 
+##
+#
+#\brief This variable acts as a counter for the startup function
+#
 on_startup = 1
+
+##
+#
+#\brief Acts as a counter to change conditions.
 token = 0
+
+##
+#
+#\brief An intermediate variable.
 temp = 0 
+
+##
+#
+#\brief A variable to store the avergae velocity.
 avg_vel = 0
+
+##
+#
+#\brief A varaible to store the user set goal.
 set_goal = 0
 # Variable initialisation
 
+##
+#\brief Provides a basic node description for ease of use.
+#\param on_startup
+#\return text display
+#
+# This function runs on startup of the node and provides a description of it's use to the user.
 def startup(on_startup):
 	
 	os.system('clear')
@@ -32,6 +71,13 @@ def startup(on_startup):
 	print("\nPress enter to continue...")
 	input("\n------------------------------------------------")
 
+##
+#
+#\brief This function identifies the robots position and goal position.
+#\param a
+#\return The average velocity
+#
+# This function stores the robots current position and set goal position then computes, using pythagorean theorem, the straight line distance of the robot away from the goal.
 def subscriber(a):
 
 	global token, temp, avg_vel, set_goal
@@ -78,6 +124,10 @@ if __name__ == '__main__':
 	print("------------------------------------------------")
 	rospy.init_node("node_C")
 	rospy.Subscriber('position_and_velocity', Vel, subscriber)
+	
+	##
+	#
+	#\brief This variable takes a user input as the rate in which the messages will publish to the terminal.
 	message_rate = input("Please enter the rate at which you would like the messages to publish: ")
 	message_rate = int(message_rate)
 	#allows user input for the rate at which the messages appear
