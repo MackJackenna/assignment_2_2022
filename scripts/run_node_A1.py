@@ -1,21 +1,3 @@
-## @package assignment_2_2022
-#
-#\file node_A1.py
-#\brief The node handles the user input of the robot.
-#\author Jack McKenna
-#\version 1.0
-#\date 01/02/2023
-#
-#\details 
-#
-# Clients: <BR>
-#	/reaching_goal
-#
-#
-# Description: 
-#
-# This node concerns itself with defining the user input of the robot. The use can select the desired x and y position as a goal for the robot to travel to. The user also has the option to cancel currently active goals.
-
 #! /usr/bin/env python3
 
 import rospy
@@ -25,20 +7,10 @@ import assignment_2_2022.msg
 import actionlib
 from geometry_msgs.msg import PoseStamped
 
-# node_A1.py will outline the interface and the functions required to set and cancel the robot's goal
 
-##
-#
-#\brief This variable acts as a counter for the startup function
 on_startup = 1
-# will allow for a brief description of the node before it is used
 
-##
-#\brief Provides a basic node description for ease of use.
-#\param on_startup
-#\return text display
-#
-# This function runs on startup of the node and provides a description of it's use to the user.
+
 def startup(on_startup):
 	os.system('clear')
 	print("--------------------Node A1--------------------\n")
@@ -48,11 +20,7 @@ def startup(on_startup):
 	print("\nPress enter to continue...")
 	input("\n-----------------------------------------------")
 
-##
-#\brief Acts as a UI for the user to input the desired coordinates.
-#\return text confirmation.
-#
-# This function takes an intger input from the user for both x and y coordinates then communicates with the server to update the robots goal.
+
 def reaching_goal():
 	
 	os.system('clear')
@@ -71,28 +39,22 @@ def reaching_goal():
 	print("--------------------------------------------------")
 	print("Waiting for server...")
 	client.wait_for_server()
-	#Allows the action server to startup before continuing
 	
 	goal = PoseStamped()
 	goal.pose.position.x = x_coord
 	goal.pose.position.y = y_coord	
 	goal = assignment_2_2022.msg.PlanningGoal(goal)
-	#Creates the goal required by the action server
+	
 	
 	client.send_goal(goal)
 	print("--------------------------------------------------")
 	input("Goal has reached the server! Press enter to continue...")	
 	interface()
-	#Sends the goal then switches to the interface function
+	
 
-##
-#
-#\brief Cancels the currently active goal.
-#\return text confirmation.
-#
-# This function communicates with the server that the current goal has been cancelled by the user.
+
 def cancel_goal():
-# Cancels any active goals then goes back to interface()
+
 	
 	os.system('clear')
 	
@@ -103,14 +65,8 @@ def cancel_goal():
 	input("--------------------------------------------------")
 	interface()
 
-##
-#
-#\brief Takes into account incorrect user inputs.
-#\return text confirmation.
-#
-# This function identifies incorrect inputs and communicates this to the server.
 def wrong():
-# Takes into account incorrect inputs
+
 	
 	os.system('clear')
 	
@@ -119,14 +75,9 @@ def wrong():
 	print("\nPress enter to continue...")
 	input("--------------------------------------------------")
 	interface()
-##
-#
-#\brief Acts as a UI to select other functions.
-#\return one of three functions specified by the user.
-#
-# This function is an interface that asks the user to select one of three options to either Select a goal, Cancel a goal or Exit the node. Upon a wrong input, the wrong function is used.	
+	
 def interface():
-# Provides the main interface for accessing goal definitions and cancellations
+
 
 	os.system('clear')
 	
@@ -154,27 +105,25 @@ def interface():
 	
 	else:
 		wrong()
-	# Provides the options to input a goal, cancel a goal or exit the node, else wrong() will run		
+		
 		
 if __name__ == '__main__':
 	
 	if on_startup == 1:
 		startup(on_startup)
 		on_startup = 0
-	#allows the description to only run once on startup	
+		
 	os.system('clear')
 	rospy.init_node('node_A1')
-	#initialised the node
 	
-	##
-	#
-	#\brief This variable accesses the client.
+	
+
 	client = actionlib.SimpleActionClient('/reaching_goal',assignment_2_2022.msg.PlanningAction)
-	#acesses the /reaching_goal ros topic
+	
 	interface()
 	
 	rospy.spin()
-	# keeps the programme running until the node is exited
+	
 	
 
 
