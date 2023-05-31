@@ -1,0 +1,111 @@
+\hypertarget{namespacenode___b}{}\doxysection{node\+\_\+B Namespace Reference}
+\label{namespacenode___b}\index{node\_B@{node\_B}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacenode___b_a84723196a6242d81647508e6acb0f326}{startup}} (\mbox{\hyperlink{namespacenode___b_ad67e6029d1b7c893965921b02b5c809e}{on\+\_\+startup}})
+\begin{DoxyCompactList}\small\item\em Provides a basic node description for ease of use. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacenode___b_a16cb9fbe4b57c6c581c10c5bb3fce577}{subscriber}} (a)
+\begin{DoxyCompactList}\small\item\em This functions updates the tallys. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacenode___b_a5e0e2359798de9c385f3c2d78b492ab3}{service}} (b)
+\begin{DoxyCompactList}\small\item\em A service which displays the tallys. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacenode___b_ad67e6029d1b7c893965921b02b5c809e}{on\+\_\+startup}} = 1
+\begin{DoxyCompactList}\small\item\em This variable acts as a counter for the startup function. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacenode___b_a10b37c8c56e02b1ac23452720a1f56c4}{goal\+\_\+tally}} = 0
+\begin{DoxyCompactList}\small\item\em This variable acts as a tally for goals reached. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacenode___b_a72ff02d929762d9c387e31cc5a20b8d9}{cancel\+\_\+tally}} = 0
+\begin{DoxyCompactList}\small\item\em This variable acts as a tally for goals cancelled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacenode___b_a5e0e2359798de9c385f3c2d78b492ab3}\label{namespacenode___b_a5e0e2359798de9c385f3c2d78b492ab3}} 
+\index{node\_B@{node\_B}!service@{service}}
+\index{service@{service}!node\_B@{node\_B}}
+\doxysubsubsection{\texorpdfstring{service()}{service()}}
+{\footnotesize\ttfamily def node\+\_\+\+B.\+service (\begin{DoxyParamCaption}\item[{}]{b }\end{DoxyParamCaption})}
+
+
+
+A service which displays the tallys. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a displaay of the current tally
+\end{DoxyReturn}
+This function is initiated by the publisher and prints to the user the amount of times the goal and cancel tally has been updated. ~\newline
+ \mbox{\Hypertarget{namespacenode___b_a84723196a6242d81647508e6acb0f326}\label{namespacenode___b_a84723196a6242d81647508e6acb0f326}} 
+\index{node\_B@{node\_B}!startup@{startup}}
+\index{startup@{startup}!node\_B@{node\_B}}
+\doxysubsubsection{\texorpdfstring{startup()}{startup()}}
+{\footnotesize\ttfamily def node\+\_\+\+B.\+startup (\begin{DoxyParamCaption}\item[{}]{on\+\_\+startup }\end{DoxyParamCaption})}
+
+
+
+Provides a basic node description for ease of use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em on\+\_\+startup} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+text display
+\end{DoxyReturn}
+This function runs on startup of the node and provides a description of it\textquotesingle{}s use to the user. \mbox{\Hypertarget{namespacenode___b_a16cb9fbe4b57c6c581c10c5bb3fce577}\label{namespacenode___b_a16cb9fbe4b57c6c581c10c5bb3fce577}} 
+\index{node\_B@{node\_B}!subscriber@{subscriber}}
+\index{subscriber@{subscriber}!node\_B@{node\_B}}
+\doxysubsubsection{\texorpdfstring{subscriber()}{subscriber()}}
+{\footnotesize\ttfamily def node\+\_\+\+B.\+subscriber (\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})}
+
+
+
+This functions updates the tallys. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{namespacenode___b_a5e0e2359798de9c385f3c2d78b492ab3}{service()}}
+\end{DoxyReturn}
+This function subscribes to /reaching\+\_\+goal/status. A status indicator of 2 translates into a cancelled goal, an indicator of 3 is a reached goal. 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenode___b_a72ff02d929762d9c387e31cc5a20b8d9}\label{namespacenode___b_a72ff02d929762d9c387e31cc5a20b8d9}} 
+\index{node\_B@{node\_B}!cancel\_tally@{cancel\_tally}}
+\index{cancel\_tally@{cancel\_tally}!node\_B@{node\_B}}
+\doxysubsubsection{\texorpdfstring{cancel\_tally}{cancel\_tally}}
+{\footnotesize\ttfamily int node\+\_\+\+B.\+cancel\+\_\+tally = 0}
+
+
+
+This variable acts as a tally for goals cancelled. 
+
+\mbox{\Hypertarget{namespacenode___b_a10b37c8c56e02b1ac23452720a1f56c4}\label{namespacenode___b_a10b37c8c56e02b1ac23452720a1f56c4}} 
+\index{node\_B@{node\_B}!goal\_tally@{goal\_tally}}
+\index{goal\_tally@{goal\_tally}!node\_B@{node\_B}}
+\doxysubsubsection{\texorpdfstring{goal\_tally}{goal\_tally}}
+{\footnotesize\ttfamily int node\+\_\+\+B.\+goal\+\_\+tally = 0}
+
+
+
+This variable acts as a tally for goals reached. 
+
+\mbox{\Hypertarget{namespacenode___b_ad67e6029d1b7c893965921b02b5c809e}\label{namespacenode___b_ad67e6029d1b7c893965921b02b5c809e}} 
+\index{node\_B@{node\_B}!on\_startup@{on\_startup}}
+\index{on\_startup@{on\_startup}!node\_B@{node\_B}}
+\doxysubsubsection{\texorpdfstring{on\_startup}{on\_startup}}
+{\footnotesize\ttfamily int node\+\_\+\+B.\+on\+\_\+startup = 1}
+
+
+
+This variable acts as a counter for the startup function. 
+

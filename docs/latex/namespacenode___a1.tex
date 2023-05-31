@@ -1,0 +1,119 @@
+\hypertarget{namespacenode___a1}{}\doxysection{node\+\_\+\+A1 Namespace Reference}
+\label{namespacenode___a1}\index{node\_A1@{node\_A1}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacenode___a1_a6fc28fcaee4dd8b8c9ebc7bdba1f9e86}{startup}} (\mbox{\hyperlink{namespacenode___a1_a265936c1ba43eff23802b70ea3670b7d}{on\+\_\+startup}})
+\begin{DoxyCompactList}\small\item\em Provides a basic node description for ease of use. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacenode___a1_a5356a17b4acd56078fec5b736773ffe6}{reaching\+\_\+goal}} ()
+\begin{DoxyCompactList}\small\item\em Acts as a UI for the user to input the desired coordinates. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacenode___a1_a57a29a82cfe7473a3d55baec277849c1}{cancel\+\_\+goal}} ()
+\begin{DoxyCompactList}\small\item\em Cancels the currently active goal. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacenode___a1_a3838929d5bfaa322b878b7ffa8be59cd}{wrong}} ()
+\begin{DoxyCompactList}\small\item\em Takes into account incorrect user inputs. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacenode___a1_a1b87738d5ddc78b645b46085f747090f}{interface}} ()
+\begin{DoxyCompactList}\small\item\em Acts as a UI to select other functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacenode___a1_a265936c1ba43eff23802b70ea3670b7d}{on\+\_\+startup}} = 1
+\begin{DoxyCompactList}\small\item\em This variable acts as a counter for the startup function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacenode___a1_ad0f96dd89c8dd90411e25030eb8b653a}{client}} = actionlib.\+Simple\+Action\+Client(\textquotesingle{}/\mbox{\hyperlink{namespacenode___a1_a5356a17b4acd56078fec5b736773ffe6}{reaching\+\_\+goal}}\textquotesingle{},assignment\+\_\+2\+\_\+2022.\+msg.\+Planning\+Action)
+\begin{DoxyCompactList}\small\item\em This variable accesses the client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacenode___a1_a57a29a82cfe7473a3d55baec277849c1}\label{namespacenode___a1_a57a29a82cfe7473a3d55baec277849c1}} 
+\index{node\_A1@{node\_A1}!cancel\_goal@{cancel\_goal}}
+\index{cancel\_goal@{cancel\_goal}!node\_A1@{node\_A1}}
+\doxysubsubsection{\texorpdfstring{cancel\_goal()}{cancel\_goal()}}
+{\footnotesize\ttfamily def node\+\_\+\+A1.\+cancel\+\_\+goal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cancels the currently active goal. 
+
+\begin{DoxyReturn}{Returns}
+text confirmation.
+\end{DoxyReturn}
+This function communicates with the server that the current goal has been cancelled by the user. \mbox{\Hypertarget{namespacenode___a1_a1b87738d5ddc78b645b46085f747090f}\label{namespacenode___a1_a1b87738d5ddc78b645b46085f747090f}} 
+\index{node\_A1@{node\_A1}!interface@{interface}}
+\index{interface@{interface}!node\_A1@{node\_A1}}
+\doxysubsubsection{\texorpdfstring{interface()}{interface()}}
+{\footnotesize\ttfamily def node\+\_\+\+A1.\+interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Acts as a UI to select other functions. 
+
+\begin{DoxyReturn}{Returns}
+one of three functions specified by the user.
+\end{DoxyReturn}
+This function is an interface that asks the user to select one of three options to either Select a goal, Cancel a goal or Exit the node. Upon a wrong input, the wrong function is used. ~\newline
+ \mbox{\Hypertarget{namespacenode___a1_a5356a17b4acd56078fec5b736773ffe6}\label{namespacenode___a1_a5356a17b4acd56078fec5b736773ffe6}} 
+\index{node\_A1@{node\_A1}!reaching\_goal@{reaching\_goal}}
+\index{reaching\_goal@{reaching\_goal}!node\_A1@{node\_A1}}
+\doxysubsubsection{\texorpdfstring{reaching\_goal()}{reaching\_goal()}}
+{\footnotesize\ttfamily def node\+\_\+\+A1.\+reaching\+\_\+goal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Acts as a UI for the user to input the desired coordinates. 
+
+\begin{DoxyReturn}{Returns}
+text confirmation.
+\end{DoxyReturn}
+This function takes an intger input from the user for both x and y coordinates then communicates with the server to update the robots goal. \mbox{\Hypertarget{namespacenode___a1_a6fc28fcaee4dd8b8c9ebc7bdba1f9e86}\label{namespacenode___a1_a6fc28fcaee4dd8b8c9ebc7bdba1f9e86}} 
+\index{node\_A1@{node\_A1}!startup@{startup}}
+\index{startup@{startup}!node\_A1@{node\_A1}}
+\doxysubsubsection{\texorpdfstring{startup()}{startup()}}
+{\footnotesize\ttfamily def node\+\_\+\+A1.\+startup (\begin{DoxyParamCaption}\item[{}]{on\+\_\+startup }\end{DoxyParamCaption})}
+
+
+
+Provides a basic node description for ease of use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em on\+\_\+startup} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+text display
+\end{DoxyReturn}
+This function runs on startup of the node and provides a description of it\textquotesingle{}s use to the user. \mbox{\Hypertarget{namespacenode___a1_a3838929d5bfaa322b878b7ffa8be59cd}\label{namespacenode___a1_a3838929d5bfaa322b878b7ffa8be59cd}} 
+\index{node\_A1@{node\_A1}!wrong@{wrong}}
+\index{wrong@{wrong}!node\_A1@{node\_A1}}
+\doxysubsubsection{\texorpdfstring{wrong()}{wrong()}}
+{\footnotesize\ttfamily def node\+\_\+\+A1.\+wrong (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Takes into account incorrect user inputs. 
+
+\begin{DoxyReturn}{Returns}
+text confirmation.
+\end{DoxyReturn}
+This function identifies incorrect inputs and communicates this to the server. 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenode___a1_ad0f96dd89c8dd90411e25030eb8b653a}\label{namespacenode___a1_ad0f96dd89c8dd90411e25030eb8b653a}} 
+\index{node\_A1@{node\_A1}!client@{client}}
+\index{client@{client}!node\_A1@{node\_A1}}
+\doxysubsubsection{\texorpdfstring{client}{client}}
+{\footnotesize\ttfamily node\+\_\+\+A1.\+client = actionlib.\+Simple\+Action\+Client(\textquotesingle{}/\mbox{\hyperlink{namespacenode___a1_a5356a17b4acd56078fec5b736773ffe6}{reaching\+\_\+goal}}\textquotesingle{},assignment\+\_\+2\+\_\+2022.\+msg.\+Planning\+Action)}
+
+
+
+This variable accesses the client. 
+
+\mbox{\Hypertarget{namespacenode___a1_a265936c1ba43eff23802b70ea3670b7d}\label{namespacenode___a1_a265936c1ba43eff23802b70ea3670b7d}} 
+\index{node\_A1@{node\_A1}!on\_startup@{on\_startup}}
+\index{on\_startup@{on\_startup}!node\_A1@{node\_A1}}
+\doxysubsubsection{\texorpdfstring{on\_startup}{on\_startup}}
+{\footnotesize\ttfamily int node\+\_\+\+A1.\+on\+\_\+startup = 1}
+
+
+
+This variable acts as a counter for the startup function. 
+

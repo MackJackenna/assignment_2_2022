@@ -1,0 +1,66 @@
+\hypertarget{namespacenode___a2}{}\doxysection{node\+\_\+\+A2 Namespace Reference}
+\label{namespacenode___a2}\index{node\_A2@{node\_A2}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacenode___a2_a37beb534a601ef6539b339030229736e}{startup}} (\mbox{\hyperlink{namespacenode___a2_a12d5ad0a593a7b6ecde1524fd4721ae9}{on\+\_\+startup}})
+\begin{DoxyCompactList}\small\item\em Provides a basic node description for ease of use. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacenode___a2_a0eab6386059f74f0aae384eaf02de7d1}{callback}} (a)
+\begin{DoxyCompactList}\small\item\em Publishes data from \textbackslash{}odom to the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacenode___a2_a12d5ad0a593a7b6ecde1524fd4721ae9}{on\+\_\+startup}} = 1
+\begin{DoxyCompactList}\small\item\em This variable acts as a counter for the startup function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacenode___a2_a0eab6386059f74f0aae384eaf02de7d1}\label{namespacenode___a2_a0eab6386059f74f0aae384eaf02de7d1}} 
+\index{node\_A2@{node\_A2}!callback@{callback}}
+\index{callback@{callback}!node\_A2@{node\_A2}}
+\doxysubsubsection{\texorpdfstring{callback()}{callback()}}
+{\footnotesize\ttfamily def node\+\_\+\+A2.\+callback (\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})}
+
+
+
+Publishes data from \textbackslash{}odom to the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+intermediate text message.
+\end{DoxyReturn}
+This function employs a publisher that subscribes to the /odom (odometry) topic to extract the robots position. \mbox{\Hypertarget{namespacenode___a2_a37beb534a601ef6539b339030229736e}\label{namespacenode___a2_a37beb534a601ef6539b339030229736e}} 
+\index{node\_A2@{node\_A2}!startup@{startup}}
+\index{startup@{startup}!node\_A2@{node\_A2}}
+\doxysubsubsection{\texorpdfstring{startup()}{startup()}}
+{\footnotesize\ttfamily def node\+\_\+\+A2.\+startup (\begin{DoxyParamCaption}\item[{}]{on\+\_\+startup }\end{DoxyParamCaption})}
+
+
+
+Provides a basic node description for ease of use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em on\+\_\+startup} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+text display
+\end{DoxyReturn}
+This function runs on startup of the node and provides a description of it\textquotesingle{}s use to the user. 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenode___a2_a12d5ad0a593a7b6ecde1524fd4721ae9}\label{namespacenode___a2_a12d5ad0a593a7b6ecde1524fd4721ae9}} 
+\index{node\_A2@{node\_A2}!on\_startup@{on\_startup}}
+\index{on\_startup@{on\_startup}!node\_A2@{node\_A2}}
+\doxysubsubsection{\texorpdfstring{on\_startup}{on\_startup}}
+{\footnotesize\ttfamily int node\+\_\+\+A2.\+on\+\_\+startup = 1}
+
+
+
+This variable acts as a counter for the startup function. 
+

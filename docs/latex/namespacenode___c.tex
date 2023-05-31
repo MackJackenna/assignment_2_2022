@@ -1,0 +1,126 @@
+\hypertarget{namespacenode___c}{}\doxysection{node\+\_\+C Namespace Reference}
+\label{namespacenode___c}\index{node\_C@{node\_C}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacenode___c_a96f10a08863f9d21e724242ffacefd0e}{startup}} (\mbox{\hyperlink{namespacenode___c_a122dff12519599cfda9c5bd7804ff535}{on\+\_\+startup}})
+\begin{DoxyCompactList}\small\item\em Provides a basic node description for ease of use. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacenode___c_a1ef6df83e076053682804556f6bb2d0f}{subscriber}} (a)
+\begin{DoxyCompactList}\small\item\em This function identifies the robots position and goal position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacenode___c_a122dff12519599cfda9c5bd7804ff535}{on\+\_\+startup}} = 1
+\begin{DoxyCompactList}\small\item\em This variable acts as a counter for the startup function. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacenode___c_aacba8b357225662b87a9caf2016b9984}{token}} = 0
+\begin{DoxyCompactList}\small\item\em Acts as a counter to change conditions. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacenode___c_add1d03d44566f220634fb94338ee96de}{temp}} = 0
+\begin{DoxyCompactList}\small\item\em An intermediate variable. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacenode___c_a5e8131cded75bd07f4de416a995d0dc3}{avg\+\_\+vel}} = 0
+\begin{DoxyCompactList}\small\item\em A variable to store the avergae velocity. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacenode___c_a4f404f5a9c1e22689777b0a3e7e7124a}{set\+\_\+goal}} = 0
+\begin{DoxyCompactList}\small\item\em A varaible to store the user set goal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacenode___c_adb49b80f1a9515fef907bcd3577e9111}{message\+\_\+rate}} = input(\char`\"{}Please enter the rate at which you would like the messages to publish\+: \char`\"{})
+\begin{DoxyCompactList}\small\item\em This variable takes a user input as the rate in which the messages will publish to the terminal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacenode___c_a96f10a08863f9d21e724242ffacefd0e}\label{namespacenode___c_a96f10a08863f9d21e724242ffacefd0e}} 
+\index{node\_C@{node\_C}!startup@{startup}}
+\index{startup@{startup}!node\_C@{node\_C}}
+\doxysubsubsection{\texorpdfstring{startup()}{startup()}}
+{\footnotesize\ttfamily def node\+\_\+\+C.\+startup (\begin{DoxyParamCaption}\item[{}]{on\+\_\+startup }\end{DoxyParamCaption})}
+
+
+
+Provides a basic node description for ease of use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em on\+\_\+startup} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+text display
+\end{DoxyReturn}
+This function runs on startup of the node and provides a description of it\textquotesingle{}s use to the user. \mbox{\Hypertarget{namespacenode___c_a1ef6df83e076053682804556f6bb2d0f}\label{namespacenode___c_a1ef6df83e076053682804556f6bb2d0f}} 
+\index{node\_C@{node\_C}!subscriber@{subscriber}}
+\index{subscriber@{subscriber}!node\_C@{node\_C}}
+\doxysubsubsection{\texorpdfstring{subscriber()}{subscriber()}}
+{\footnotesize\ttfamily def node\+\_\+\+C.\+subscriber (\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})}
+
+
+
+This function identifies the robots position and goal position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The average velocity
+\end{DoxyReturn}
+This function stores the robots current position and set goal position then computes, using pythagorean theorem, the straight line distance of the robot away from the goal. 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenode___c_a5e8131cded75bd07f4de416a995d0dc3}\label{namespacenode___c_a5e8131cded75bd07f4de416a995d0dc3}} 
+\index{node\_C@{node\_C}!avg\_vel@{avg\_vel}}
+\index{avg\_vel@{avg\_vel}!node\_C@{node\_C}}
+\doxysubsubsection{\texorpdfstring{avg\_vel}{avg\_vel}}
+{\footnotesize\ttfamily int node\+\_\+\+C.\+avg\+\_\+vel = 0}
+
+
+
+A variable to store the avergae velocity. 
+
+\mbox{\Hypertarget{namespacenode___c_adb49b80f1a9515fef907bcd3577e9111}\label{namespacenode___c_adb49b80f1a9515fef907bcd3577e9111}} 
+\index{node\_C@{node\_C}!message\_rate@{message\_rate}}
+\index{message\_rate@{message\_rate}!node\_C@{node\_C}}
+\doxysubsubsection{\texorpdfstring{message\_rate}{message\_rate}}
+{\footnotesize\ttfamily node\+\_\+\+C.\+message\+\_\+rate = input(\char`\"{}Please enter the rate at which you would like the messages to publish\+: \char`\"{})}
+
+
+
+This variable takes a user input as the rate in which the messages will publish to the terminal. 
+
+\mbox{\Hypertarget{namespacenode___c_a122dff12519599cfda9c5bd7804ff535}\label{namespacenode___c_a122dff12519599cfda9c5bd7804ff535}} 
+\index{node\_C@{node\_C}!on\_startup@{on\_startup}}
+\index{on\_startup@{on\_startup}!node\_C@{node\_C}}
+\doxysubsubsection{\texorpdfstring{on\_startup}{on\_startup}}
+{\footnotesize\ttfamily int node\+\_\+\+C.\+on\+\_\+startup = 1}
+
+
+
+This variable acts as a counter for the startup function. 
+
+\mbox{\Hypertarget{namespacenode___c_a4f404f5a9c1e22689777b0a3e7e7124a}\label{namespacenode___c_a4f404f5a9c1e22689777b0a3e7e7124a}} 
+\index{node\_C@{node\_C}!set\_goal@{set\_goal}}
+\index{set\_goal@{set\_goal}!node\_C@{node\_C}}
+\doxysubsubsection{\texorpdfstring{set\_goal}{set\_goal}}
+{\footnotesize\ttfamily int node\+\_\+\+C.\+set\+\_\+goal = 0}
+
+
+
+A varaible to store the user set goal. 
+
+\mbox{\Hypertarget{namespacenode___c_add1d03d44566f220634fb94338ee96de}\label{namespacenode___c_add1d03d44566f220634fb94338ee96de}} 
+\index{node\_C@{node\_C}!temp@{temp}}
+\index{temp@{temp}!node\_C@{node\_C}}
+\doxysubsubsection{\texorpdfstring{temp}{temp}}
+{\footnotesize\ttfamily int node\+\_\+\+C.\+temp = 0}
+
+
+
+An intermediate variable. 
+
+\mbox{\Hypertarget{namespacenode___c_aacba8b357225662b87a9caf2016b9984}\label{namespacenode___c_aacba8b357225662b87a9caf2016b9984}} 
+\index{node\_C@{node\_C}!token@{token}}
+\index{token@{token}!node\_C@{node\_C}}
+\doxysubsubsection{\texorpdfstring{token}{token}}
+{\footnotesize\ttfamily int node\+\_\+\+C.\+token = 0}
+
+
+
+Acts as a counter to change conditions. 
+
